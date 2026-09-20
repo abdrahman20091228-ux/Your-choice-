@@ -1179,7 +1179,7 @@ function tvBuildScreen(tv,pick){
   var cv=document.createElement('canvas'); cv.width=640; cv.height=Math.max(160,Math.round(640*h/w));
   var tex=new THREE.CanvasTexture(cv); tex.encoding=THREE.sRGBEncoding; tex.generateMipmaps=false; tex.minFilter=THREE.LinearFilter; tex.anisotropy=4;
   var plane=new THREE.Mesh(new THREE.PlaneGeometry(w,h), new THREE.MeshBasicMaterial({map:tex,toneMapped:false,color:0xeeeeee}));
-  plane.position.set((r.x1+r.x2)/2,(r.y1+r.y2)/2,r.z+0.003);
+  plane.position.set((r.x1+r.x2)/2,(r.y1+r.y2)/2,r.z+0.005);
   scene.add(plane);
   tvInfo={plane:plane,tex:tex,cv:cv,ctx:cv.getContext('2d'),box:new THREE.Box3().setFromObject(tv),lastDraw:0,t0:performance.now()};
   console.log('شاشة التلفاز:',r.how,'العرض',w.toFixed(2),'الارتفاع',h.toFixed(2));
